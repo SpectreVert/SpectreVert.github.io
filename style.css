@@ -17,11 +17,7 @@ body {
     height: 100%;
 }
 
-#switch {
-    display: none;
-}
-
-.switch-lab {
+.switch-label {
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 3px grey;
@@ -32,15 +28,11 @@ body {
     padding: 10px;
 }
 
-.switch-lab::after {
+.switch-label::after {
     content: "on";
 }
 
-#switch:checked+.switch-lab::after {
-    content: "off"
-}
-
-.switch-lab::before {
+.switch-label::before {
     background: #003321;
     border: 1px solid #111;
     border-radius: 100%;
@@ -51,6 +43,24 @@ body {
     width: 10px;
 }
 
-#switch:checked+.switch-lab::before {
+#switch {
+    display: none;
+}
+
+#switch:checked + .switch-label::after {
+    content: "off"
+}
+
+#switch:checked + .switch-label::before {
     background: #22ff55;
+}
+
+#switch:checked ~ .screen {
+    animation: turn-on 4s linear;
+    /*animation-fill-mode: forwards;*/
+}
+
+#switch ~ .screen {
+    animation: turn-off 0.55s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    animation-fill-mode: forwards;
 }
