@@ -36,6 +36,10 @@ body {
     content: "on";
 }
 
+#switch:checked+.switch-lab::after {
+    content: "off"
+}
+
 .switch-lab::before {
     background: #003321;
     border: 1px solid #111;
