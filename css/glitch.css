@@ -1,0 +1,109 @@
+/*
+    First seen on https://codepen.io/lbebber/
+    Remodeled by me
+*/
+.glitch {
+  position: relative;
+  margin: 0 auto;
+}
+
+.glitch::after {
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+  content: attr(data-text);
+  clip: rect(0, 900px, 0, 0);
+  left: 2px;
+  position: absolute;
+  text-shadow: -1px 0 red;
+}
+
+.glitch::before {
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+  content: attr(data-text);
+  clip: rect(0, 900px, 0, 0);
+  left: -2px;
+  position: absolute;
+  text-shadow: 1px 0 blue;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(1px, 9999px, 65px, 0);
+  }
+  4% {
+    clip: rect(6px, 9999px, 48px, 0);
+  }
+  8% {
+    clip: rect(37px, 9999px, 76px, 0);
+  }
+  12% {
+    clip: rect(82px, 9999px, 50px, 0);
+  }
+  16% {
+    clip: rect(40px, 9999px, 30px, 0);
+  }
+  20% {
+    clip: rect(71px, 9999px, 89px, 0);
+  }
+  24% {
+    clip: rect(35px, 9999px, 18px, 0);
+  }
+  28% {
+    clip: rect(83px, 9999px, 56px, 0);
+  }
+  32% {
+    clip: rect(40px, 9999px, 47px, 0);
+  }
+  36% {
+    clip: rect(51px, 9999px, 13px, 0);
+  }
+  40% {
+    clip: rect(22px, 9999px, 57px, 0);
+  }
+  44% {
+    clip: rect(55px, 9999px, 20px, 0);
+  }
+  48% {
+    clip: rect(75px, 9999px, 88px, 0);
+  }
+  52% {
+    clip: rect(72px, 9999px, 13px, 0);
+  }
+  56% {
+    clip: rect(8px, 9999px, 6px, 0);
+  }
+  60% {
+    clip: rect(52px, 9999px, 32px, 0);
+  }
+  64% {
+    clip: rect(56px, 9999px, 84px, 0);
+  }
+  68% {
+    clip: rect(91px, 9999px, 85px, 0);
+  }
+  72% {
+    clip: rect(77px, 9999px, 2px, 0);
+  }
+  76% {
+    clip: rect(13px, 9999px, 5px, 0);
+  }
+  80% {
+    clip: rect(12px, 9999px, 75px, 0);
+  }
+  84% {
+    clip: rect(56px, 9999px, 26px, 0);
+  }
+  88% {
+    clip: rect(81px, 9999px, 17px, 0);
+  }
+  92% {
+    clip: rect(63px, 9999px, 69px, 0);
+  }
+  96% {
+    clip: rect(87px, 9999px, 3px, 0);
+  }
+  100% {
+    clip: rect(4px, 9999px, 16px, 0);
+  }
+}
+
+/*# sourceMappingURL=glitch.css.map */

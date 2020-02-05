@@ -2,8 +2,11 @@
     github.com/SpectreVert    
 */
 
+@import "glitch.scss";
+
 body {
     background-color: black;
+    font: 600 1rem/1.3 Consolas, monospace;
     overflow: hidden;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -14,7 +17,21 @@ body {
 .screen {
     background-color: lime;
     border: 2px solid #666;
-    height: 100%;
+    height: 94%;
+}
+
+#switch {
+    display: none;
+}
+
+#switch:checked ~ .screen {
+    animation: turn-on 4s linear;
+    /*animation-fill-mode: forwards;*/
+}
+
+#switch ~ .screen {
+    animation: turn-off 0.55s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    animation-fill-mode: forwards;
 }
 
 .switch-label {
@@ -23,13 +40,16 @@ body {
     box-shadow: 0 3px grey;
     cursor: pointer;
     display: inline-block;
-    font: 600 1rem/1.3 Consolas, monospace;
     margin-bottom: 15px;
     padding: 10px;
 }
 
 .switch-label::after {
     content: "on";
+}
+
+#switch:checked + .switch-label::after {
+    content: "off"
 }
 
 .switch-label::before {
@@ -43,24 +63,17 @@ body {
     width: 10px;
 }
 
-#switch {
-    display: none;
-}
-
-#switch:checked + .switch-label::after {
-    content: "off"
-}
-
 #switch:checked + .switch-label::before {
     background: #22ff55;
 }
 
-#switch:checked ~ .screen {
-    animation: turn-on 4s linear;
-    /*animation-fill-mode: forwards;*/
+#the-name {
+    color: black;
+    font-size: 66px;
+    width: 30%;
 }
 
-#switch ~ .screen {
-    animation: turn-off 0.55s cubic-bezier(0.230, 1.000, 0.320, 1.000);
-    animation-fill-mode: forwards;
+p {
+    text-align-last: center;
+    padding: 1rem 3rem;
 }
