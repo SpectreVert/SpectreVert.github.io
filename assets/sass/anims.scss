@@ -1,3 +1,5 @@
+/* CRT monitor animation inspired from codepen.io/lbebber */
+
 .power-label::after { content: "< power on >"; }
 #power-switch:checked ~ header > nav > div > .power-label::after { content: "< power off >"; }
 
@@ -63,4 +65,61 @@
       transform: scale(0.000,0.0001) translate3d(0,0,0);
       filter: brightness(50);
   }
+}
+
+/* glith effect */
+
+.glitch {
+  position: relative;
+  margin: 0 auto;
+}
+
+.glitch:not(:hover)::before, .glitch:not(:hover)::after {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  color: inherit;
+  background-color: inherit;
+}
+
+.glitch:not(:hover)::before {
+  left: 3px;
+  text-shadow: -2px 0 #FF0000;
+  animation-name: glitch-1;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse-alternate;
+}
+
+.glitch:not(:hover)::after {
+  left: -3px;
+  text-shadow: -2px 0 #0000FF;
+  animation-name: glitch-2;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse-alternate;
+}
+
+@keyframes glitch-1 {
+  $steps: 20;
+
+  @for $i from 0 through $steps {
+    #{ percentage($i * (1 / $steps)) } {
+      clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+    }
+  }
+}
+
+@keyframes glitch-2 {
+  $steps: 20;
+ 
+  @for $i from 0 through $steps { 
+    #{ percentage($i * (1 / $steps)) } {
+      clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+    }
+  } 
 }
