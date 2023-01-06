@@ -1,0 +1,36 @@
+/*
+    First seen on https://codepen.io/lbebber/
+    Remodeled by me
+*/
+.glitch { position: relative; margin: 0 auto; }
+
+.glitch::after { animation: glitch-anim 2s infinite linear alternate-reverse; content: attr(data-text); clip: rect(0, 900px, 0, 0); left: 2px; position: absolute; text-shadow: -1px 0 red; }
+
+.glitch::before { animation: glitch-anim 3s infinite linear alternate-reverse; content: attr(data-text); clip: rect(0, 900px, 0, 0); left: -2px; position: absolute; text-shadow: 1px 0 blue; }
+
+@keyframes glitch-anim { 0% { clip: rect(17px, 9999px, 69px, 0); }
+  4% { clip: rect(27px, 9999px, 38px, 0); }
+  8% { clip: rect(12px, 9999px, 77px, 0); }
+  12% { clip: rect(17px, 9999px, 65px, 0); }
+  16% { clip: rect(56px, 9999px, 86px, 0); }
+  20% { clip: rect(63px, 9999px, 33px, 0); }
+  24% { clip: rect(35px, 9999px, 69px, 0); }
+  28% { clip: rect(8px, 9999px, 47px, 0); }
+  32% { clip: rect(23px, 9999px, 40px, 0); }
+  36% { clip: rect(84px, 9999px, 88px, 0); }
+  40% { clip: rect(70px, 9999px, 71px, 0); }
+  44% { clip: rect(72px, 9999px, 98px, 0); }
+  48% { clip: rect(92px, 9999px, 63px, 0); }
+  52% { clip: rect(92px, 9999px, 39px, 0); }
+  56% { clip: rect(79px, 9999px, 36px, 0); }
+  60% { clip: rect(29px, 9999px, 60px, 0); }
+  64% { clip: rect(7px, 9999px, 100px, 0); }
+  68% { clip: rect(87px, 9999px, 11px, 0); }
+  72% { clip: rect(8px, 9999px, 39px, 0); }
+  76% { clip: rect(20px, 9999px, 59px, 0); }
+  80% { clip: rect(86px, 9999px, 79px, 0); }
+  84% { clip: rect(53px, 9999px, 39px, 0); }
+  88% { clip: rect(48px, 9999px, 66px, 0); }
+  92% { clip: rect(100px, 9999px, 5px, 0); }
+  96% { clip: rect(71px, 9999px, 59px, 0); }
+  100% { clip: rect(34px, 9999px, 51px, 0); } }
